@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WISE Food Ethiopia - Nutrition Education, Urban Agriculture &amp; AI Innovation</title>
+    <meta name="description" content="WISE Food Ethiopia connects evidence-based nutrition education, AI-powered culinary training and urban agriculture to build healthier, more resilient communities in Addis Ababa and across Ethiopia.">
+    <meta name="theme-color" content="#2d8659">
+
+    <!-- Local favicon -->
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary-green: #2d8659;
+            --dark-green: #256b44;
+            --accent-orange: #f39c12;
+            --accent-red: #e74c3c;
+            --accent-blue: #3498db;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --bg-light: #f5f6f8;
+            --white: #ffffff;
+            --border-color: #ecf0f1;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #ffffff;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        /* ============ SHELL ============ */
+
+        .page-wrapper {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .inner-width {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 12px;
+        }
+
+        /* ============ HEADER & NAVIGATION ============ */
+
+        header {
+            background: linear-gradient(90deg, #2d8659 0%, #3ea86b 50%, #48b078 100%);
+            color: var(--white);
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-circle {
+            width: 44px;
+            height: 44px;
+            background-color: var(--accent-orange);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: var(--text-dark);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+
+        .logo-text h1 {
+            font-size: 1.4em;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+        }
+
+        .logo-text p {
+            font-size: 0.78em;
+            opacity: 0.9;
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 18px;
+            align-items: center;
+        }
+
+        nav li {
+            margin: 0;
+        }
+
+        nav a,
+        .nav-link-btn {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9em;
+            letter-spacing: 0.02em;
+            opacity: 0.9;
+            transition: opacity 0.2s ease, border-color 0.2s ease;
+            padding-bottom: 2px;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-link-btn {
+            background: none;
+            border: none;
+            padding-inline: 0;
+            font: inherit;
+            cursor: pointer;
+        }
+
+        nav a:hover,
+        nav a:focus,
+        .nav-link-btn:hover,
+        .nav-link-btn:focus {
+            opacity: 1;
+            border-color: rgba(255,255,255,0.8);
+        }
+
+        /* ============ HERO SECTION ============ */
+
+        .hero {
+            background: radial-gradient(
+                circle at center,
+                #3ea86b 0%,
+                #2d8659 40%,
+                #dff4e8 75%,
+                #ffffff 100%
+            );
+            color: var(--white);
+            padding: 56px 0 48px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            max-width: 780px;
+            margin: 0 auto 16px;
+            font-weight: 700;
+            letter-spacing: -0.04em;
+        }
+
+        .hero p {
+            font-size: 1.04em;
+            opacity: 0.98;
+            max-width: 720px;
+            margin: 0 auto 22px;
+            line-height: 1.8;
+        }
+
+        .hero-subline {
+            font-size: 0.93em;
+            opacity: 0.95;
+            max-width: 680px;
+            margin: 0 auto 24px;
+        }
+
+        .badge-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 18px;
+            font-size: 0.82em;
+            opacity: 0.95;
+        }
+
+        .badge-pill {
+            border-radius: 999px;
+            padding: 5px 12px;
+            background-color: rgba(0,0,0,0.25);
+            border: 1px solid rgba(255,255,255,0.25);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 26px;
+            border-radius: 999px;
+            font-size: 0.9em;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-orange);
+            color: var(--text-dark);
+        }
+
+        .btn-primary:hover {
+            background-color: #e67e22;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255,255,255,0.85);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--white);
+            color: var(--primary-green);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        /* ============ SECTION BASE ============ */
+
+        main {
+            flex: 1 0 auto;
+            padding: 24px 0 20px;
+        }
+
+        section.section-block {
+            background: var(--white);
+            margin: 16px auto;
+            padding: 30px 20px 32px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+            scroll-margin-top: 80px;
+        }
+
+        section.section-block h2 {
+            color: var(--primary-green);
+            font-size: 1.85em;
+            margin-bottom: 4px;
+            border-bottom: 3px solid var(--accent-orange);
+            padding-bottom: 8px;
+        }
+
+        .section-subtitle {
+            font-size: 0.94em;
+            color: var(--text-light);
+            margin-top: 6px;
+        }
+
+        h3 {
+            color: var(--dark-green);
+            font-size: 1.32em;
+            margin: 20px 0 10px;
+        }
+
+        /* ============ GRID LAYOUTS ============ */
+
+        .grid-2 {
+            display: grid;
+            gap: 24px;
+            margin: 22px 0 0;
+        }
+
+        @media (min-width: 900px) {
+            .grid-2 {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 899px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 18px;
+            margin: 22px 0 0;
+        }
+
+        /* ============ CARDS & UTILITIES ============ */
+
+        .card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 16px 16px 18px;
+            border-radius: 10px;
+            border: 1px solid rgba(0,0,0,0.03);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+            border-color: rgba(0,0,0,0.06);
+        }
+
+        .card-icon {
+            font-size: 1.8em;
+            margin-bottom: 4px;
+        }
+
+        .card h3 {
+            margin-bottom: 4px;
+            color: var(--primary-green);
+        }
+
+        .card p {
+            font-size: 0.92em;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .project-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(52, 152, 219, 0.12);
+            color: var(--accent-blue);
+            padding: 5px 12px;
+            border-radius: 999px;
+            font-size: 0.84em;
+            font-weight: 600;
+            margin: 14px 0 6px;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 16px;
+            margin: 22px 0 0;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+            color: var(--white);
+            padding: 18px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 7px 16px rgba(0,0,0,0.18);
+        }
+
+        .metric-number {
+            font-size: 1.9em;
+            font-weight: 700;
+            color: var(--accent-orange);
+            margin-bottom: 4px;
+            letter-spacing: -0.02em;
+        }
+
+        .metric-label {
+            font-size: 0.88em;
+            opacity: 0.92;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #f3fbf7 100%);
+            padding: 14px 14px 16px;
+            border-left: 4px solid var(--primary-green);
+            border-radius: 10px;
+            font-size: 0.93em;
+        }
+
+        .highlight-box h3 {
+            margin-top: 0;
+            margin-bottom: 5px;
+            color: var(--primary-green);
+        }
+
+        .feature-list {
+            list-style: none;
+            margin: 16px 0 0;
+        }
+
+        .feature-list li {
+            padding: 6px 0 6px 24px;
+            position: relative;
+            color: var(--text-light);
+            font-size: 0.93em;
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 6px;
+            color: var(--primary-green);
+            font-weight: 700;
+            font-size: 1.06em;
+        }
+
+        /* ============ PROBLEM / SOLUTION ============ */
+
+        .problem-solution {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+            margin: 22px 0 0;
+        }
+
+        .problem-box,
+        .solution-box {
+            padding: 14px 14px 16px;
+            border-radius: 10px;
+            font-size: 0.93em;
+        }
+
+        .problem-box {
+            background-color: #ffecec;
+            border-left: 4px solid var(--accent-red);
+        }
+
+        .solution-box {
+            background-color: #e6f7ec;
+            border-left: 4px solid var(--primary-green);
+        }
+
+        .problem-box h3 {
+            color: var(--accent-red);
+            margin-top: 0;
+        }
+
+        .solution-box h3 {
+            color: var(--primary-green);
+            margin-top: 0;
+        }
+
+        .problem-box ul,
+        .solution-box ul {
+            margin: 8px 0 0 16px;
+        }
+
+        .problem-box li,
+        .solution-box li {
+            margin-bottom: 5px;
+        }
+
+        /* ============ PROGRAMS ============ */
+
+        .program-item {
+            padding: 14px 0;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.95em;
+        }
+
+        .program-item:last-child {
+            border-bottom: none;
+        }
+
+        .program-title {
+            color: var(--primary-green);
+            font-size: 1.14em;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .program-year {
+            color: var(--accent-orange);
+            font-size: 0.84em;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        /* ============ IMPACT GALLERY ============ */
+
+        .section-centered {
+            text-align: center;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 18px;
+            margin: 20px 0 0;
+        }
+
+        .gallery-card {
+            background: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .gallery-visual {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .gallery-visual img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-body {
+            padding: 12px 14px 14px;
+            text-align: left;
+        }
+
+        .gallery-title {
+            font-weight: 600;
+            color: var(--primary-green);
+            margin-bottom: 4px;
+            font-size: 0.96em;
+        }
+
+        .gallery-caption {
+            font-size: 0.88em;
+            color: var(--text-light);
+        }
+
+        /* ============ CONTACT SECTION ============ */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin: 20px 0 0;
+        }
+
+        .contact-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 14px 14px 16px;
+            border-left: 4px solid var(--primary-green);
+            font-size: 0.93em;
+        }
+
+        .contact-card h3 {
+            margin-top: 0;
+            margin-bottom: 6px;
+        }
+
+        .contact-line {
+            margin: 5px 0;
+            color: var(--text-light);
+        }
+
+        .contact-line strong {
+            color: var(--text-dark);
+        }
+
+        .contact-card a {
+            color: var(--primary-green);
+            text-decoration: none;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* ============ DIVIDER ============ */
+
+        .divider {
+            height: 1px;
+            background: var(--border-color);
+            margin: 24px 0 18px;
+        }
+
+        /* ============ FOOTER ============ */
+
+        footer {
+            background-color: #1f2933;
+            color: var(--white);
+            text-align: center;
+            padding: 20px 12px 24px;
+            font-size: 0.88em;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            flex-shrink: 0;
+        }
+
+        footer p {
+            margin: 4px 0;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            margin: 8px 0 6px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a,
+        .footer-link-btn {
+            color: var(--accent-orange);
+            text-decoration: none;
+            font-size: 0.88em;
+        }
+
+        .footer-links a:hover,
+        .footer-link-btn:hover {
+            text-decoration: underline;
+        }
+
+        .footer-link-btn {
+            background: none;
+            border: none;
+            padding: 0;
+            font: inherit;
+            cursor: pointer;
+        }
+
+        /* ============ GENERIC LISTS ============ */
+
+        ul {
+            margin-left: 16px;
+        }
+
+        li {
+            line-height: 1.7;
+        }
+
+        /* ============ RESPONSIVE ============ */
+
+        @media (max-width: 768px) {
+            header {
+                padding: 8px 0;
+            }
+
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                gap: 8px 12px;
+            }
+
+            .hero {
+                padding: 44px 0 40px;
+            }
+
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            main {
+                padding: 18px 0 20px;
+            }
+
+            section.section-block {
+                margin: 12px auto;
+                padding: 24px 16px 26px;
+                border-radius: 10px;
+            }
+
+            section.section-block h2 {
+                font-size: 1.6em;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+    <!-- HEADER -->
+    <header>
+        <div class="inner-width header-content">
+            <div class="logo-section">
+                <div class="logo-circle">🌿</div>
+                <div class="logo-text">
+                    <h1>WISE Food Ethiopia</h1>
+                    <p>Nutrition • Agriculture • Innovation</p>
+                </div>
+            </div>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><button type="button" class="nav-link-btn" onclick="scrollSection('about')">About</button></li>
+                    <li><button type="button" class="nav-link-btn" onclick="scrollSection('skillbridge')">SkillBridge AI</button></li>
+                    <li><button type="button" class="nav-link-btn" onclick="scrollSection('nutrimap')">NutriMap AI</button></li>
+                    <li><button type="button" class="nav-link-btn" onclick="scrollSection('programs')">Programs</button></li>
+                    <li><button type="button" class="nav-link-btn" onclick="scrollSection('impact')">Impact</button></li>
+                    <li><button type="button" class="nav-link-btn" onclick="scrollSection('contact')">Contact</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="inner-width">
+            <div class="badge-row">
+                <span class="badge-pill">🍎 Nutrition Education</span>
+                <span class="badge-pill">🌾 Urban Agriculture</span>
+                <span class="badge-pill">🤖 AI Innovation</span>
+                <span class="badge-pill">👩‍👧 Women &amp; Youth Empowerment</span>
+            </div>
+
+            <h1>Transforming Food &amp; Nutrition in Ethiopia Through Technology &amp; Education</h1>
+            <p>Evidence-based nutrition education, AI-powered culinary training, personalized nutrition intelligence, and urban agriculture—all working together to build healthier, more resilient communities in Addis Ababa and beyond.</p>
+            <p class="hero-subline">WISE Food Ethiopia connects people, policy, and technology so that healthy, affordable food choices become the easy choices—at home, in schools, and across communities.</p>
+
+            <div class="cta-buttons">
+                <button type="button" class="btn btn-primary" onclick="scrollSection('skillbridge')">Explore SkillBridge AI</button>
+                <button type="button" class="btn btn-primary" onclick="scrollSection('nutrimap')">Explore NutriMap AI</button>
+                <a href="mailto:admin@wisefoodethiopia.com?subject=Partnership Interest - WISE Food Ethiopia" class="btn btn-secondary">Partner or Get Involved</a>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- ABOUT -->
+        <section id="about" class="section-block">
+            <div class="inner-width">
+                <h2>About WISE Food Ethiopia</h2>
+                <p class="section-subtitle">Connecting nutrition science, community education, and innovation to improve health outcomes across Ethiopia.</p>
+
+                <div class="grid-2">
+                    <div>
+                        <h3>Our Mission</h3>
+                        <p>WISE Food Ethiopia is dedicated to helping people stay healthy by connecting them with evidence-based food and nutrition education, as well as practical culinary skills training. We work to create an inspiring and collaborative environment that connects government organizations, key stakeholders, and volunteers—encouraging them to work together, share knowledge, and exchange skills and expertise to improve nutrition outcomes.</p>
+                    </div>
+                    <div>
+                        <h3>Our Vision</h3>
+                        <p>We envision stronger food and nutrition policies, strategies, and implementation across Ethiopia, achieving measurable progress by 2030. Our goals include:</p>
+                        <ul>
+                            <li>Increasing awareness of nutrition's impact on health</li>
+                            <li>Promoting access to healthy and sustainable foods</li>
+                            <li>Empowering youth and women through education and practical skills</li>
+                            <li>Building resilient urban and rural food systems</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLBRIDGE AI -->
+        <section id="skillbridge" class="section-block">
+            <div class="inner-width">
+                <h2>SkillBridge AI: AI-Powered Culinary Training &amp; Job Matching</h2>
+                <p class="section-subtitle">Helping young people gain real culinary skills and connecting them to dignified employment.</p>
+                <div class="project-badge">
+                    <span>🤖 AI Technology</span>·<span>💼 Employment</span>·<span>🎓 Education</span>
+                </div>
+
+                <div class="problem-solution">
+                    <div class="problem-box">
+                        <h3>❌ The Challenge</h3>
+                        <ul>
+                            <li>High youth unemployment in Addis Ababa</li>
+                            <li>Limited access to quality culinary training</li>
+                            <li>Skills mismatch between training &amp; employer needs</li>
+                            <li>No structured pathway from training to employment</li>
+                            <li>Difficulty verifying practical cooking competencies</li>
+                        </ul>
+                    </div>
+                    <div class="solution-box">
+                        <h3>✅ Our Solution</h3>
+                        <ul>
+                            <li>AI-powered video course platform with interactive assessments</li>
+                            <li>Computer vision analyzes cooking techniques in real-time</li>
+                            <li>Intelligent job-matching algorithm for employment</li>
+                            <li>Verified micro-credentials &amp; digital certificates</li>
+                            <li>Direct connections to restaurants, hotels &amp; catering firms</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Core Features</h3>
+                <div class="grid-3">
+                    <div class="card">
+                        <div class="card-icon">📹</div>
+                        <h3>Interactive Video Courses</h3>
+                        <p>Accessible curriculum on healthy, affordable Ethiopian cooking with step-by-step tutorials aligned with food-based dietary guidelines.</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">🤖</div>
+                        <h3>AI Skill Assessment</h3>
+                        <p>Computer vision technology automatically evaluates cooking techniques, knife skills, plating, and food safety practices.</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">💼</div>
+                        <h3>Smart Job Matching</h3>
+                        <p>Machine learning models match trained individuals with verified job openings at restaurants, hotels, schools, and catering companies.</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">🏆</div>
+                        <h3>Digital Credentials</h3>
+                        <p>Secure micro-credentials and certificates that employers can instantly validate.</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">📱</div>
+                        <h3>Multi-Channel Access</h3>
+                        <p>Telegram bot for low-bandwidth learning, YouTube integration, mobile app, and SMS reminders for accessibility.</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">🤝</div>
+                        <h3>Employer Portal</h3>
+                        <p>Businesses can post jobs, browse certified professionals, verify credentials, and connect directly with candidates.</p>
+                    </div>
+                </div>
+
+                <h3>Projected Impact (2025–2027)</h3>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-number">5,000+</div>
+                        <div class="metric-label">Youth Trained &amp; Placed</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-number">2,500+</div>
+                        <div class="metric-label">Jobs Created</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-number">500+</div>
+                        <div class="metric-label">Partner Businesses</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-number">85%+</div>
+                        <div class="metric-label">Employment Rate</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NUTRIMAP AI -->
+        <section id="nutrimap" class="section-block">
+            <div class="inner-width">
+                <h2>NutriMap AI: Personalized Nutrition &amp; Recipe Intelligence</h2>
+                <p class="section-subtitle">Putting evidence-based, affordable nutrition guidance in the hands of every urban resident.</p>
+                <div class="project-badge">
+                    <span>🍎 Nutrition</span>·<span>🤖 AI Intelligence</span>·<span>🏘️ Community</span>
+                </div>
+
+                <div class="problem-solution">
+                    <div class="problem-box">
+                        <h3>❌ The Challenge</h3>
+                        <ul>
+                            <li>Lack of personalized nutrition guidance for urban Addis residents</li>
+                            <li>Food choices often based on price, not nutrition</li>
+                            <li>Limited awareness of Food-Based Dietary Guidelines (FBDG)</li>
+                            <li>No easy way to align meals with individual nutritional needs</li>
+                            <li>High malnutrition despite adequate food access</li>
+                        </ul>
+                    </div>
+                    <div class="solution-box">
+                        <h3>✅ Our Solution</h3>
+                        <ul>
+                            <li>AI analyzes individual nutritional needs based on local Ethiopian foods</li>
+                            <li>Personalized recipe recommendations using FBDG</li>
+                            <li>Integration with local market prices via aggregated data</li>
+                            <li>Telegram bot for urban residents and health workers</li>
+                            <li>Nutrition tracking with adaptive guidance</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>How It Works</h3>
+                <div class="grid-2">
+                    <div class="highlight-box">
+                        <h3>📊 Personalization Engine</h3>
+                        <p>Users input basic health information (age, weight, activity level, dietary preferences). NutriMap AI builds a personalized nutrition profile aligned with FBDG recommendations.</p>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h3>🍳 Smart Recipe Generator</h3>
+                        <p>AI generates daily meal recommendations using local Ethiopian ingredients—injera, teff, legumes, vegetables—matching both nutritional goals and budget constraints.</p>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h3>💰 Market Price Integration</h3>
+                        <p>Market data shows ingredient costs at local Addis vendors, helping users make affordable nutritious choices.</p>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h3>📱 Telegram &amp; SMS Access</h3>
+                        <p>Low-bandwidth access via Telegram bot ensures accessibility for populations with limited internet connectivity.</p>
+                    </div>
+                </div>
+
+                <h3>Features &amp; Benefits</h3>
+                <ul class="feature-list">
+                    <li><strong>Nutritional Balance:</strong> Ensures meals meet daily requirements for calories, protein, vitamins, and minerals.</li>
+                    <li><strong>Cultural Relevance:</strong> All recipes use traditional Ethiopian ingredients and cooking methods.</li>
+                    <li><strong>Budget-Friendly:</strong> Meal plans adapt to user budget constraints.</li>
+                    <li><strong>Health Tracking:</strong> Monitor nutrition goals over time with adaptive recommendations.</li>
+                    <li><strong>Multi-Language:</strong> Available in Amharic, Oromifa, and English.</li>
+                    <li><strong>Expert Backing:</strong> Recommendations based on WHO guidelines and national FBDG.</li>
+                    <li><strong>Integration with WISE Programs:</strong> Connects to culinary training and community education.</li>
+                </ul>
+
+                <h3>Target Users &amp; Reach</h3>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-number">10,000+</div>
+                        <div class="metric-label">Urban Users in Year 1</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-number">30%</div>
+                        <div class="metric-label">Improvement in Nutrition Awareness</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-number">20%</</div>
+                        <div class="metric-label">Reduction in Malnutrition</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-number">100%</div>
+                        <div class="metric-label">FBDG-Aligned Recipes</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROGRAMS -->
+        <section id="programs" class="section-block">
+            <div class="inner-width">
+                <h2>Our Programs &amp; Initiatives</h2>
+
+                <div class="program-item">
+                    <h3 class="program-title">🌾 Urban Agriculture Training</h3>
+                    <p class="program-year">2021</p>
+                    <p>Facilitated a three-day training in Dessie City (28–30 September 2021) for 13 women and 3 men, introducing urban farming techniques. The program also engaged children in composting, planting, and cultivating vegetables—building foundational agricultural knowledge for younger generations.</p>
+                </div>
+
+                <div class="program-item">
+                    <h3 class="program-title">📡 Virtual Nutrition Conference</h3>
+                    <p class="program-year">2023</p>
+                    <p>Organized the first week-long virtual nutrition conference in collaboration with the SAGE Telegram platform (2–8 October 2023), reaching over 400 participants nationwide. This event connected nutrition professionals, policymakers, and community leaders across Ethiopia's regions.</p>
+                </div>
+
+                <div class="program-item">
+                    <h3 class="program-title">🎓 Innovative Nutrition Education Events</h3>
+                    <p class="program-year">2024–Present</p>
+                    <p>Conducting half-day food and nutrition education sessions in partnership with government ministries and private organizations. Recent events brought together 50 students, 21 staff, 13 invited guests, and 9 expert speakers from government, academia, and NGOs.</p>
+                </div>
+
+                <div class="program-item">
+                    <h3 class="program-title">📚 Educational Materials Distribution</h3>
+                    <p class="program-year">Ongoing</p>
+                    <p>Distributed more than 90 flyers featuring Ethiopia's Food-Based Dietary Guidelines (FBDG) key messages, providing accessible nutrition education across communities.</p>
+                </div>
+
+                <div class="program-item">
+                    <h3 class="program-title">👨‍🍳 Culinary Skills Training</h3>
+                    <p class="program-year">Ongoing</p>
+                    <p>Engaged 50 adolescents (25 girls and 25 boys) in hands-on cooking sessions demonstrating easy, healthy recipes for home practice. This program empowers young people to prepare nutritious meals using locally available, affordable ingredients.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- IMPACT -->
+        <section id="impact" class="section-block">
+            <div class="inner-width">
+                <h2>Our Impact So Far</h2>
+                <p class="section-subtitle">Evidence that our education, AI tools, and programs are reaching real people and communities.</p>
+
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-number">60,000+</div>
+                        <div class="metric-label">Women &amp; Girls Reached</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-number">400+</div>
+                        <div class="metric-label">Conference Participants</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-number">90+</div>
+                        <div class="metric-label">FBDG Materials Distributed</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-number">110</div>
+                        <div class="metric-label">Savings &amp; Credit Cooperatives</div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <h3>2025–2030 Strategic Goals</h3>
+                <div class="grid-2">
+                    <div class="highlight-box">
+                        <h3>🚀 Scale AI Solutions</h3>
+                        <p>Deploy SkillBridge AI and NutriMap AI across Addis Ababa with plans for regional expansion. Train 5,000+ culinary professionals and reach 10,000+ nutrition users.</p>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h3>🤝 Strengthen Partnerships</h3>
+                        <p>Deepen collaborations with government ministries, employers, educational institutions, and international development partners to ensure policy integration and sustainability.</p>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h3>📊 Evidence Generation</h3>
+                        <p>Conduct rigorous impact evaluations, measure nutrition outcomes, employment rates, and food security indicators to demonstrate effectiveness and inform scaling.</p>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h3>💚 Sustainability</h3>
+                        <p>Develop diversified revenue models through social enterprise, government contracts, and donor funding to ensure long-term impact and organizational resilience.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- IMPACT GALLERY WITH REAL PHOTOS -->
+        <section class="section-block section-centered">
+            <div class="inner-width">
+                <h2>Our Impact in Action</h2>
+                <p class="section-subtitle">Visual snapshots of WISE Food Ethiopia’s programs.</p>
+
+                <div class="gallery-grid">
+                    <div class="gallery-card">
+                        <div class="gallery-visual">
+                            <img src="assets/img/urban-farming.jpg" alt="Urban Farming Demonstrations - group learning in school garden">
+                        </div>
+                        <div class="gallery-body">
+                            <div class="gallery-title">Urban Farming Demonstrations</div>
+                            <p class="gallery-caption">Women and youth learning how to grow vegetables, compost, and manage school and community plots for household nutrition.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-card">
+                        <div class="gallery-visual">
+                            <img src="assets/img/hands-on-culinary-classes.jpg" alt="Hands-on culinary education session with adolescents">
+                        </div>
+                        <div class="gallery-body">
+                            <div class="gallery-title">Hands-On Culinary Classes</div>
+                            <p class="gallery-caption">Adolescents practicing simple, healthy recipes using locally available, affordable ingredients, guided by WISE Food Ethiopia facilitators.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-card">
+                        <div class="gallery-visual">
+                            <img src="assets/img/nutrition-education-sessions.jpg" alt="Children participating in nutrition and balcony gardening activity">
+                        </div>
+                        <div class="gallery-body">
+                            <div class="gallery-title">Nutrition Education Sessions</div>
+                            <p class="gallery-caption">Children experimenting with balcony gardening and composting, turning small spaces into vibrant sources of fresh vegetables.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-card">
+                        <div class="gallery-visual">
+                            <img src="assets/img/virtual-conference-highlights.jpg" alt="View of nutrition conference audience and food display">
+                        </div>
+                        <div class="gallery-body">
+                            <div class="gallery-title">Virtual Conference Highlights</div>
+                            <p class="gallery-caption">Hybrid sessions bringing together youth, educators, and experts to discuss sustainable diets and practical food-based nutrition education.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CLOUD RESOURCES -->
+        <section class="section-block">
+            <div class="inner-width">
+                <h2>Powered by Leading Cloud Technology</h2>
+                <p class="section-subtitle">SkillBridge AI and NutriMap AI run on modern, scalable infrastructure to keep our services reliable, secure, and affordable.</p>
+
+                <div class="grid-3">
+                    <div class="card">
+                        <div class="card-icon">☁️</div>
+                        <h3>Google Cloud</h3>
+                        <p>AI/ML APIs, computer vision, data analytics, and scalable infrastructure for our intelligent platforms.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🔧</div>
+                        <h3>AWS</h3>
+                        <p>Backend services, databases, video processing, and elastic computing for platform reliability.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🐳</div>
+                        <h3>DigitalOcean</h3>
+                        <p>App hosting, Telegram bot deployment, managed databases, and affordable scalable infrastructure.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🧠</div>
+                        <h3>IBM Cloud</h3>
+                        <p>Watson AI APIs for natural language processing, computer vision, and advanced machine learning.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">📱</div>
+                        <h3>Telegram API</h3>
+                        <p>Low-bandwidth access ensuring our platforms reach even those with limited internet connectivity.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">📊</div>
+                        <h3>Data &amp; Analytics</h3>
+                        <p>Real-time analytics, impact measurement, and insights to drive continuous improvement.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY WISE -->
+        <section class="section-block">
+            <div class="inner-width">
+                <h2>Why Partner With WISE Food Ethiopia?</h2>
+                <div class="grid-3">
+                    <div class="card">
+                        <div class="card-icon">🏆</div>
+                        <h3>Proven Track Record</h3>
+                        <p>25+ years of experience in nutrition education, women's empowerment, and community development across Ethiopia.</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">🤖</div>
+                        <h3>AI Innovation</h3>
+                        <p>Cutting-edge technology integrated with grassroots education for scalable, modern solutions to age-old nutrition challenges.</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">📍</div>
+                        <h3>Local Expertise</h3>
+                        <p>Deep understanding of Ethiopian food systems, cultural preferences, and community needs ensures culturally appropriate solutions.</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">📈</div>
+                        <h3>Measurable Impact</h3>
+                        <p>Data-driven approach with rigorous monitoring and evaluation to demonstrate results and inform continuous improvement.</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">🌍</div>
+                        <h3>Global Vision</h3>
+                        <p>Aligned with UN Sustainable Development Goals (SDG 2, 3, 4, 5, 8) and international nutrition standards.</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">🚀</div>
+                        <h3>GSE Partnership</h3>
+                        <p>Supported by Global Startup Ecosystem with access to tech resources, mentorship, and a global network.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA BAND -->
+        <section class="section-block">
+            <div class="inner-width">
+                <div style="background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%); color: var(--white); padding: 32px 18px; border-radius: 12px; text-align: center;">
+                    <h2 style="border: none; color: var(--white); margin-bottom: 10px; font-size: 1.8em;">Join Us in Transforming Food &amp; Nutrition in Ethiopia</h2>
+                    <p style="font-size: 0.98em; margin-bottom: 18px;">Be part of building healthier communities through evidence-based nutrition education, culinary excellence, and AI innovation.</p>
+                    <div class="cta-buttons" style="justify-content: center;">
+                        <a href="mailto:admin@wisefoodethiopia.com?subject=Partnership Interest - WISE Food Ethiopia" class="btn btn-primary">Partner With Us</a>
+                        <a href="mailto:admin@wisefoodethiopia.com?subject=Employer Interest - SkillBridge AI" class="btn btn-primary">Register as Employer</a>
+                        <a href="mailto:admin@wisefoodethiopia.com?subject=Learner Interest - Join WISE Programs" class="btn btn-secondary">Join as Learner</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section-block">
+            <div class="inner-width">
+                <h2>Contact &amp; Partnerships</h2>
+                <p class="section-subtitle">Reach out to explore partnerships, sponsorships, or to bring WISE Food Ethiopia programs to your community.</p>
+
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <h3>General Inquiries</h3>
+                        <p class="contact-line"><strong>Email:</strong> <a href="mailto:admin@wisefoodethiopia.com">admin@wisefoodethiopia.com</a></p>
+                        <p class="contact-line"><strong>Location:</strong> Addis Ababa, Ethiopia</p>
+                        <p class="contact-line">Use the email above for questions about our programs, media, and speaking engagements.</p>
+                    </div>
+
+                    <div class="contact-card">
+                        <h3>Partnerships &amp; Funders</h3>
+                        <p class="contact-line"><strong>For:</strong> Government agencies, NGOs, donors, universities, and private-sector partners.</p>
+                        <p class="contact-line">Email us with the subject line <strong>“Partnership Interest - WISE Food Ethiopia”</strong> to explore collaboration opportunities.</p>
+                    </div>
+
+                    <div class="contact-card">
+                        <h3>Employers &amp; Learners</h3>
+                        <p class="contact-line"><strong>SkillBridge AI:</strong> Restaurants, hotels, schools, and catering firms seeking trained staff.</p>
+                        <p class="contact-line"><strong>NutriMap AI:</strong> Individuals and health workers interested in piloting personalized nutrition tools.</p>
+                        <p class="contact-line">Use the buttons above or include <strong>“Employer Interest - SkillBridge AI”</strong> or <strong>“Learner Interest - WISE Programs”</strong> in your email subject.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 WISE Food Ethiopia. All rights reserved.</p>
+        <div class="footer-links">
+            <button type="button" class="footer-link-btn" onclick="scrollSection('about')">About</button>
+            <button type="button" class="footer-link-btn" onclick="scrollSection('skillbridge')">SkillBridge AI</button>
+            <button type="button" class="footer-link-btn" onclick="scrollSection('nutrimap')">NutriMap AI</button>
+            <button type="button" class="footer-link-btn" onclick="scrollSection('programs')">Programs</button>
+            <button type="button" class="footer-link-btn" onclick="scrollSection('impact')">Impact</button>
+            <button type="button" class="footer-link-btn" onclick="scrollSection('contact')">Contact</button>
+        </div>
+        <p>Single-page site powered by WISE Food Ethiopia.</p>
+    </footer>
+</div>
+
+<script>
+    function scrollSection(id) {
+        var el = document.getElementById(id);
+        if (!el) return;
+
+        if (el.scrollIntoView) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+            var rect = el.getBoundingClientRect();
+            var offsetTop = rect.top + (window.pageYOffset || document.documentElement.scrollTop) - 80;
+            window.scrollTo(0, offsetTop);
+        }
+    }
+</script>
+</body>
+</html>
